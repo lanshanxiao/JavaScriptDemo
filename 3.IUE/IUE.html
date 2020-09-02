@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="app">
+        你好,{{ content }}<br>
+        <span>{{ description }}</span>
+    </div>
+    <script type="module">
+        // module中的内容都是局部变量
+        import IUE from "./core/index.js";
+        window.IUE = IUE;
+        window.iue = new IUE({
+            el:"app",
+            data:{
+                content:"IUE",
+                description:"hello world",
+                obj:{
+                    x:1,
+                    y:2,
+                    z:[1,2,3,4,5]
+                },
+                list:[
+                    1,
+                    {
+                        a:3,
+                        b:4
+                    },
+                    {
+                        c:5,
+                        d:6
+                    }
+                ]
+            }
+        });
+    </script>
+</body>
+</html>
